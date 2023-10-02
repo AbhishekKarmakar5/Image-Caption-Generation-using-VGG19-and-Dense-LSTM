@@ -14,7 +14,8 @@ get the desired dimensions. A novel Dense-LSTM is proposed as a decoder for the 
 part.
 
 
-Additionally, another approach has been suggested using ViT Base + GPT2_L model.
+Additionally, another approach has been suggested using ViT Base + GPT2 model.
+Github Link - https://github.com/AbhishekKarmakar5/Word-for-Images---Transformer-with-the-power-of-GPT
 
 Here are the following links of report and PPT:-
 
