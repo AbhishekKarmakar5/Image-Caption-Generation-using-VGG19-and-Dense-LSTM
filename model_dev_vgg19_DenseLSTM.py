@@ -221,6 +221,7 @@ for i in range(0,epochs,2):
 
 
 """
+### READ - 1
 'vocab_size' and 'max_length' are important parameters used in the process of preparing the data and defining the model for image captioning. 
 
 1. vocab_size:
@@ -241,6 +242,15 @@ This ensures that all sequences are padded or truncated to this length.
 
 In summary, vocab_size is the total number of unique words in your training data, and max_length is the maximum length of a sequence 
 (in terms of words) in your training data. These values are important for creating the model architecture and preparing the input data for training.
+"""
+
+
+"""
+### READ - 2
+The Embedding layer is responsible for converting the integer-encoded words into dense vectors of fixed size (256 in this case). 
+It essentially creates a dense representation of the words in the descriptions.
+
+Before feeding the text descriptions into the LSTM training model, first the text embedding has been extracted and this is send to the LSTM block.
 """
 
 
