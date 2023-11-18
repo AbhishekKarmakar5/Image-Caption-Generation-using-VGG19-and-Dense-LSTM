@@ -198,7 +198,7 @@ train_features = load_photo_features('features_vgg19.pkl', train)
 print('Photos: train=%d' % len(train_features))
 # prepare tokenizer
 tokenizer = create_tokenizer(train_descriptions)
-vocab_size = len(tokenizer.word_index) + 1
+vocab_size = len(tokenizer.word_index) + 1 # Look at the bottom for explaination
 print('Vocabulary Size: %d' % vocab_size)
 # determine the maximum sequence length
 max_length = max_length(train_descriptions)
