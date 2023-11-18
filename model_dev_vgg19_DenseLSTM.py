@@ -152,7 +152,7 @@ def define_model(vocab_size, max_length):
     se3 = LSTM(256,return_sequences=True)(se2)
     se3_ = Lambda(lambda x : x*0.75)(se3)
     se2_ = Lambda(lambda x : x*0.25)(se2)
-    temp1_ = Add()([se3_,se2_])
+    temp1_ = Add()([se3_,se2_]) 
     se4 = LSTM(256,return_sequences=True)(temp1_)
     se4_ = Lambda(lambda x : x*0.8)(se4)
     se3_ = Lambda(lambda x : x*0.1)(se3)
@@ -160,7 +160,7 @@ def define_model(vocab_size, max_length):
     temp2_ = Add()([se4_,se3_,se2_])
     se5 = LSTM(256)(temp2_)
     # decoder model
-    decoder1 = add([fe2, se5])
+    decoder1 = add([fe2, se5]) # each element (element-wise add) in the resulting tensor is the sum of the corresponding elements in fe2 and se5
     decoder2 = Dense(256, activation='relu')(decoder1)
     outputs = Dense(vocab_size, activation='softmax')(decoder2)
     # tie it together [image, seq] [word]
