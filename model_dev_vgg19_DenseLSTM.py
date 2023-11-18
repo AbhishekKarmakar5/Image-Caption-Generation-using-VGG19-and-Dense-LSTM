@@ -220,7 +220,28 @@ for i in range(0,epochs,2):
 	model.save('model_vgg19_Denselstm' + str(i) + '.h5')
 
 
+"""
+'vocab_size' and 'max_length' are important parameters used in the process of preparing the data and defining the model for image captioning. 
 
+1. vocab_size:
+vocab_size represents the size of the vocabulary, i.e., the total number of unique words in the text data. In the context of image captioning, 
+it is the number of unique words present in the descriptions of images in your training dataset. This value is determined by the tokenizer, 
+which is responsible for mapping words in the text to numerical indices.
+
+In the code, vocab_size is calculated as the length of the word index of the tokenizer plus 1. 
+The +1 is added because the indexing of words usually starts from 1, and 0 is reserved for padding. The tokenizer is created using the create_tokenizer function, and it is fitted on the training descriptions.
+
+2. max_length:
+max_length represents the maximum length of a sequence (or sentence) in terms of the number of words. In the context of image captioning, 
+it is the maximum number of words in any image description in your training dataset. This value is crucial for padding sequences to a fixed 
+length so that they can be fed into the model for training or inference.
+
+The max_length is calculated using the max_length function, which computes the length of the description with the most words. 
+This ensures that all sequences are padded or truncated to this length.
+
+In summary, vocab_size is the total number of unique words in your training data, and max_length is the maximum length of a sequence 
+(in terms of words) in your training data. These values are important for creating the model architecture and preparing the input data for training.
+"""
 
 
 
