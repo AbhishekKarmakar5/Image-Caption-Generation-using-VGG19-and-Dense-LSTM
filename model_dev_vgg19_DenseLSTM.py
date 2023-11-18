@@ -254,4 +254,19 @@ Before feeding the text descriptions into the LSTM training model, first the tex
 """
 
 
+"""
+### READ - 3
+
+The use of Lambda(lambda x: x**____) below is to introduce a weighting factor. The output of LTSM layer is multiplied element-wise by the scalar value.
+The purpose of introducing these scalar weights is to control the contribution of each LSTM layer's output to the final combined output. 
+
+    se3_ = Lambda(lambda x : x*0.75)(se3)
+    se2_ = Lambda(lambda x : x*0.25)(se2)
+    se4_ = Lambda(lambda x : x*0.8)(se4)
+    se3_ = Lambda(lambda x : x*0.1)(se3)
+    se2_ = Lambda(lambda x : x*0.1)(se2)
+
+"""
+
+
 
